@@ -60,11 +60,16 @@ function ssht_define () {
 	alias ${ssht_prefix}_${name}_ssh="$ssh_cmd"
 }
 
+
+
 # Define a tunnel, local port 2222 points to port 22 on box1
 ssht_define box1 box1.internal.domain.org 2222 22 someuser
-
 # SSH into the machine as someuser, opening the tunnel as needed
 ssht_box1_ssh
+
+# SCP files from the machine
+scp -P $ssht_box1_port $ssht_box1_userhost:/remote/file /save/locally
+
 
 # Map port 80 on each of several web servers to local port 8x80
 # http://localhost:8180/some/url hits the server directly
