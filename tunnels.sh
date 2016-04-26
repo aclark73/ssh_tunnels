@@ -63,18 +63,19 @@ function ssht_define () {
 
 
 # Define a tunnel, local port 2222 points to port 22 on box1
-ssht_define box1 box1.internal.domain.org 2222 22 someuser
+# ssht_define box1 box1.internal.domain.org 2222 22 someuser
+
 # SSH into the machine as someuser, opening the tunnel as needed
-ssht_box1_ssh
+# ssht_box1_ssh
 
 # SCP files from the machine
-scp -P $ssht_box1_port $ssht_box1_userhost:/remote/file /save/locally
+# scp -P $ssht_box1_port $ssht_box1_userhost:/remote/file /save/locally
 
 
 # Map port 80 on each of several web servers to local port 8x80
 # http://localhost:8180/some/url hits the server directly
-ssht_define ws1 ws1.internal.domain.org 8180 80
-ssht_define ws2 ws2.internal.domain.org 8280 80
-ssht_define ws3 ws3.internal.domain.org 8380 80
+# ssht_define ws1 ws1.internal.domain.org 8180 80
+# ssht_define ws2 ws2.internal.domain.org 8280 80
+# ssht_define ws3 ws3.internal.domain.org 8380 80
 
 
